@@ -48,15 +48,32 @@ export default function Main() {
       return;
     }
 
-    const newList = listViagens.filter((viagem) =>
-      viagem.lugar.toUpperCase().trim().includes(search.toUpperCase().trim()) ||
-      viagem.pais.toUpperCase().trim().includes(search.toUpperCase().trim())
+    const newList = listViagens.filter(
+      (viagem) =>
+        viagem.lugar.toUpperCase().trim().includes(search.toUpperCase().trim()) ||
+        viagem.pais.toUpperCase().trim().includes(search.toUpperCase().trim())
+    );
+    setListViagens(newList);
+  };
+
+  // Ordem alfabética crescente
+  const orderA_Z = () => {
+    const newList = [...listViagens].sort((a, b) =>
+      a.lugar.localeCompare(b.lugar)
+    );
+    setListViagens(newList);
+  };
+
+  // Ordem alfabética decrecente
+  const orderZ_A = () => {
+    const newList = [...listViagens].sort((a, b) =>
+      b.lugar.localeCompare(a.lugar)
     );
     setListViagens(newList);
   };
 
   return (
-    <main>
+    <>
       <div>
         {/* Input de pequisa de viagens */}
         <input
@@ -65,28 +82,34 @@ export default function Main() {
           placeholder="Pesquise por Viagens"
           onChange={(event) => searchText(event.target.value)}
         />
+
+        {/* botões de filtrazem */}
+        <button onClick={orderA_Z}>A-z</button>
+        <button onClick={orderZ_A}>Z-a</button>
       </div>
 
       {/* Listagem das Viagens */}
-      {listViagens.map((viagens) => (
-        <div key={viagens.id}>
-          {
-            <Image
-              src={viagens.imagem}
-              width={350}
-              height={200}
-              alt="imagem de produto"
-            ></Image>
-          }
-          <h3>{viagens.lugar}</h3>
-          <p>{viagens.pais}</p>
-          <h2>R${viagens.preco}</h2>
-          <p>{viagens.tipo}</p>
-          <button>
-            <Link href={`viagem/${viagens.id}`}>Rota Dinâmica</Link>
-          </button>
-        </div>
-      ))}
-    </main>
+      <main>
+        {listViagens.map((viagens) => (
+          <div key={viagens.id}>
+            {
+              <Image
+                src={viagens.imagem}
+                width={350}
+                height={200}
+                alt="imagem de produto"
+              ></Image>
+            }
+            <h3>{viagens.lugar}</h3>
+            <p>{viagens.pais}</p>
+            <h2>R${viagens.preco}</h2>
+            <p>{viagens.tipo}</p>
+            <button>
+              <Link href={`viagem/${viagens.id}`}>Rota Dinâmica</Link>
+            </button>
+          </div>
+        ))}
+      </main>
+    </>
   );
 }
