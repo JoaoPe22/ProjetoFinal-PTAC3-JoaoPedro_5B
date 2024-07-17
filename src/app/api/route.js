@@ -116,7 +116,7 @@ export const listaDeViagens = [
     pais: "Tailândia",
     tipo: "Ilha",
     imagem:
-      "https://cdn.travelsafe-abroad.com/wp-content/uploads/phuket-5d4n.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgQQ7t8EmTzwB23R66mgxtK12zyApWsRiz7g&s",
     id: 13,
   },
   {
@@ -161,7 +161,7 @@ export const listaDeViagens = [
     pais: "Emirados Árabes Unidos",
     tipo: "Parque Aquático",
     imagem:
-      "https://rbtv.com.br/wp-content/uploads/2022/11/WhatsApp20Image202022-11-1720at2011.17.28201.jpeg-uX0QTT.jpeg",
+      "https://michelaguiadubai.com.br/cdn/shop/products/aquaventurewaterparkresized2_1445x.jpg?v=1648291921",
     id: 18,
   },
   {
@@ -197,7 +197,7 @@ export const listaDeViagens = [
     pais: "Peru",
     tipo: "Parque",
     imagem:
-      "https://res.cloudinary.com/worldpackers/image/upload/c_limit,f_auto,q_auto,w_1140/zht9stzaefbqhotazahy",
+      "https://content.r9cdn.net/rimg/dimg/17/1d/38963bbb-city-58607-173326d42bf.jpg?crop=true&width=1020&height=498",
     id: 22,
   },
   {
@@ -233,7 +233,7 @@ export const listaDeViagens = [
     pais: "Peru",
     tipo: "Turismo",
     imagem:
-      "https://cdnstatic8.com/viajandonajanela.com/wp-content/uploads/2018/12/o-que-fazer-em-cusco-capa-catedral.jpg?fit=1170%2C515&ssl=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/14/db/41/caption.jpg?w=1200&h=-1&s=1",
     id: 26,
   },
   {
@@ -299,7 +299,7 @@ export const listaDeViagens = [
     lugar: "Ilhas Virgens Britânicas",
     preco: 24510,
     pais: "Caribe",
-    tipo: "Parque Aquático",
+    tipo: "Ilha",
     imagem: "https://vivaomundo.com.br/wp-content/uploads/2014/08/BVIS-1.jpg",
     id: 34,
   },

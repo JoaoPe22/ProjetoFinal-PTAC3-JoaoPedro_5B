@@ -28,7 +28,7 @@ const nextConfig = {
         // id-12
         "www.vounajanela.com",
         // id-13
-        "cdn.travelsafe-abroad.com",
+        "encrypted-tbn0.gstatic.com",
         // id-14
         "oquefazeremsuaviagem.com",
         // id-15
@@ -38,7 +38,7 @@ const nextConfig = {
         // id-17
         "lalarebelo.com",
         // id-18
-        "rbtv.com.br",
+        "michelaguiadubai.com.br",
         // id-19
         "images.focomultimidia.com",
         // id-20
@@ -46,7 +46,7 @@ const nextConfig = {
         // id-21
         "res.cloudinary.com",
         // id-22
-        "res.cloudinary.com",
+        "content.r9cdn.net",
         // id-23
         "www.islandlifemexico.com",
         // id-24
@@ -54,7 +54,7 @@ const nextConfig = {
         // id-25
         "www.carpemundi.com.br",
         // id-26
-        "cdnstatic8.com",
+        "dynamic-media-cdn.tripadvisor.com",
         // id-27
         "vivaomundo.com.br",
         // id-28
