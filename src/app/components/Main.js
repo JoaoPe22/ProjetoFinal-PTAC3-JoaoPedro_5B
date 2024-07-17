@@ -50,7 +50,10 @@ export default function Main() {
 
     const newList = listViagens.filter(
       (viagem) =>
-        viagem.lugar.toUpperCase().trim().includes(search.toUpperCase().trim()) ||
+        viagem.lugar
+          .toUpperCase()
+          .trim()
+          .includes(search.toUpperCase().trim()) ||
         viagem.pais.toUpperCase().trim().includes(search.toUpperCase().trim())
     );
     setListViagens(newList);
@@ -72,6 +75,63 @@ export default function Main() {
     setListViagens(newList);
   };
 
+  // Ordem de preco crescente
+  const minPreco = () => {
+    const newList = [...listViagens].sort((a, b) => a.preco - b.preco);
+
+    setListViagens(newList);
+  };
+
+  // Ordem de preco decrecente
+  const maxPrice = () => {
+    let newList = [...listViagens].sort((a, b) => a.preco - b.preco);
+    newList = newList.reverse();
+    setListViagens(newList);
+  };
+
+  // Filtragem por tipo
+  const filterParqueAqua = () => {
+    const newList = listComplete.filter(
+      (viagem) => viagem.tipo === "Parque Aquático"
+    );
+    setListViagens(newList);
+  };
+
+  const filterPraia = () => {
+    const newList = listComplete.filter(
+      (viagem) => viagem.tipo === "Praia"
+    );
+    setListViagens(newList);
+  };
+
+  const filterDiversao = () => {
+    const newList = listComplete.filter(
+      (viagem) => viagem.tipo === "Parque de diversão"
+    );
+    setListViagens(newList);
+  };
+
+  const filterIlha = () => {
+    const newList = listComplete.filter(
+      (viagem) => viagem.tipo === "Ilha"
+    );
+    setListViagens(newList);
+  };
+ 
+  const filterTurismo = () => {
+    const newList = listComplete.filter(
+      (viagem) => viagem.tipo === "Turismo"
+    );
+    setListViagens(newList);
+  };
+
+  const filterParque = () => {
+    const newList = listComplete.filter(
+      (viagem) => viagem.tipo === "Parque"
+    );
+    setListViagens(newList);
+  };
+  
   return (
     <>
       <div>
@@ -86,6 +146,14 @@ export default function Main() {
         {/* botões de filtrazem */}
         <button onClick={orderA_Z}>A-z</button>
         <button onClick={orderZ_A}>Z-a</button>
+        <button onClick={minPreco}>Menor Preço</button>
+        <button onClick={maxPrice}>Maior Preço</button>
+        <button onClick={filterParqueAqua}>Parque Aquático</button>
+        <button onClick={filterPraia}>Praia</button>
+        <button onClick={filterDiversao}>Parque Diversão</button>
+        <button onClick={filterIlha}>Ilha</button>
+        <button onClick={filterTurismo}>Turismo</button>
+        <button onClick={filterParque}>Parque</button>
       </div>
 
       {/* Listagem das Viagens */}
