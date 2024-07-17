@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Loading from "./Loading";
 import ErrorGetData from "./ErrorGetData";
 
@@ -13,7 +14,7 @@ export default function Main() {
   useEffect(() => {
     const getViagem = async () => {
       try {
-        const response = await fetch("http://localhost:3000/ap");
+        const response = await fetch("http://localhost:3000/api");
         const data = await response.json();
         setListViagens(data);
         setListComplete(data);
@@ -23,7 +24,7 @@ export default function Main() {
     };
     getViagem();
   }, []);
-  
+
   // erro na busca de dados
   if (errorFetch == false) {
     return <ErrorGetData />;
@@ -54,6 +55,9 @@ export default function Main() {
           <p>{viagens.pais}</p>
           <h2>R${viagens.preco}</h2>
           <p>{viagens.tipo}</p>
+          <button>
+            <Link href={`viagem/${viagens.id}`}>Rota Dinâmica</Link>
+          </button>
         </div>
       ))}
     </main>
