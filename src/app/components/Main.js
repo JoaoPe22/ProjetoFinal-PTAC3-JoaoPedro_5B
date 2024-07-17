@@ -39,8 +39,35 @@ export default function Main() {
     );
   }
 
+  // Pesquisa de Viagens
+  const searchText = (text) => {
+    setSearch(text);
+
+    if (text.trim() == "") {
+      setListViagens(listComplete);
+      return;
+    }
+
+    const newList = listViagens.filter((viagem) =>
+      viagem.lugar.toUpperCase().trim().includes(search.toUpperCase().trim()) ||
+      viagem.pais.toUpperCase().trim().includes(search.toUpperCase().trim())
+    );
+    setListViagens(newList);
+  };
+
   return (
     <main>
+      <div>
+        {/* Input de pequisa de viagens */}
+        <input
+          type="text"
+          value={search}
+          placeholder="Pesquise por Viagens"
+          onChange={(event) => searchText(event.target.value)}
+        />
+      </div>
+
+      {/* Listagem das Viagens */}
       {listViagens.map((viagens) => (
         <div key={viagens.id}>
           {
