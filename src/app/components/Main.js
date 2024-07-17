@@ -1,16 +1,21 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
 export default function Main() {
   const [listViagens, setListViagens] = useState([]);
+  const [listComplete, setListComplete] = useState([]);
+  const [search, setSearch] = useState("");
+  
 
-  const getViagem = async () => {
-    const response = await fetch("http://localhost:3000/api");
-    const data = await response.json();
-    setListViagens(data);
-  };
-  getViagem()
+  useEffect(() => {
+    const getViagem = async () => {
+      const response = await fetch("http://localhost:3000/api");
+      const data = await response.json();
+      setListViagens(data);
+    };
+    getViagem();
+  });
 
   return (
     <main>
