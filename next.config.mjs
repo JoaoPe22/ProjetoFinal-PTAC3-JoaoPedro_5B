@@ -87,6 +87,9 @@ const nextConfig = {
         "billete996.aireuropa.com",
         // id-42
         "billete996.aireuropa.com",
+
+        // Lupa png
+        "cdn-icons-png.flaticon.com",
       ],
     },
   };
